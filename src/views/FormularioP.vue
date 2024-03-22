@@ -161,6 +161,7 @@
                                             <v-radio label="7 dias o mas" value="three" color="error"></v-radio>
                                         </v-radio-group>
 
+                                        
                                         <v-radio-group inline label="¿Cada cuanto se presenta tu ciclo?">
                                             <v-radio label="28 dias" value="one" color="error"></v-radio>
                                             <v-radio label="24 dias" value="two" color="error"></v-radio>
