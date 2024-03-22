@@ -15,8 +15,13 @@ const router = createRouter({
       path: '/registro',
       name: 'registro',
       component: () => import('../views/FormularioP.vue')
-    }//para todas las demas vistas
+    },//para todas las demas vistas
+    {
+      path: '/home',
+      name: 'home',
+      component: () => import('../views/Home.vue'),
+    }
   ]
 })
 
-export default router
+export default router;
