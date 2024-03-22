@@ -5,15 +5,15 @@ export default {
     return {
       visible: false,
       remember: false,
-      firstName: '',
+      usuario: '',
       firstNameRules: [
         (value: string | null | undefined) => {
           if (value && value.length > 3) return true;
           return 'First name must be at least 3 characters.';
         },
       ],
-      pasword: '123',
-      paswordRules: [
+      password: '',
+      passwordRules: [
         (value: string | null | undefined) => {
           if (!/\d/.test(value || '')) return true;
           return 'Last name cannot contain digits.';
@@ -62,6 +62,7 @@ export default {
         placeholder="Nombre de usuario"
         prepend-inner-icon="mdi-account"
         variant="outlined"
+        v-model="usuario"
       ></v-text-field>
 
       <div class="text-subtitle-1 text-medium-emphasis">Contraseña</div>
@@ -73,6 +74,8 @@ export default {
         placeholder="Contraseña"
         prepend-inner-icon="mdi-lock-outline"
         variant="outlined"
+        v-model="password"
+        :rules="passwordRules"
         @click:append-inner="visible = !visible"
       ></v-text-field>
         <v-checkbox class="text-caption text-decoration-none text-medium-emphasis" 

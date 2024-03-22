@@ -50,7 +50,14 @@
                     if (value) return true;
                     return 'La edad es requerida.';
                     }
-                ]       
+                ],
+                password: '',
+                passwordRules: [
+                    (value: string | null | undefined) => {
+                    if (!/\d/.test(value || '')) return true;
+                    return 'Last name cannot contain digits.';
+                    },
+                ],       
             };            
         
         },
@@ -139,6 +146,17 @@
                                             required
                                         ></v-text-field>
                                     </v-col>
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            v-model="password"
+                                            :counter="10"
+                                            :rules="passwordRules"
+                                            prepend-inner-icon="mdi-dialpad"
+                                            label="password"
+                                            hide-details
+                                            required
+                                        ></v-text-field>
+                                    </v-col>
                                 </v-row>
                         </v-card>
                         <v-card class="mx-auto pa-12 pb-8"
@@ -161,7 +179,6 @@
                                             <v-radio label="7 dias o mas" value="three" color="error"></v-radio>
                                         </v-radio-group>
 
-                                        
                                         <v-radio-group inline label="¿Cada cuanto se presenta tu ciclo?">
                                             <v-radio label="28 dias" value="one" color="error"></v-radio>
                                             <v-radio label="24 dias" value="two" color="error"></v-radio>
@@ -196,7 +213,7 @@
                                             <v-icon color="success"></v-icon>
                                         </template>
 
-                                        Guardar
+                                            Guardar
 
                                         <template v-slot:append>
                                             <v-icon color="warning"></v-icon>
