@@ -18,8 +18,7 @@ export default {
           if (!/\d/.test(value || '')) return true;
           return 'Last name cannot contain digits.';
         },
-      ],
-      
+      ],      
     };
   },
 };   
@@ -59,14 +58,13 @@ export default {
 
       <v-text-field
         density="compact"
-        placeholder="Nombre de usuario"
+        placeholder="Usuario"
         prepend-inner-icon="mdi-account"
         variant="outlined"
         v-model="usuario"
       ></v-text-field>
 
       <div class="text-subtitle-1 text-medium-emphasis">Contraseña</div>
-
       <v-text-field
         :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
         :type="visible ? 'text' : 'password'"
@@ -78,7 +76,7 @@ export default {
         :rules="passwordRules"
         @click:append-inner="visible = !visible"
       ></v-text-field>
-        <v-checkbox class="text-caption text-decoration-none text-medium-emphasis" 
+        <!--<v-checkbox class="text-caption text-decoration-none text-medium-emphasis" 
           v-model="remember"
           color="secondary"
           label="Recuerdame"
@@ -86,7 +84,7 @@ export default {
 
         <a class="text-caption text-decoration-none text-blue" 
           href="#" rel="noopener noreferrer" target="_blank"
-        >¿Has olvidado tu contraseña?</a>
+        >¿Has olvidado tu contraseña?</a>-->
 
       <v-card
         class="mb-12"
@@ -98,8 +96,7 @@ export default {
         </v-card-text>-->
       </v-card>
 
-      <v-btn class="mb-8" color="blue" size="large" variant="tonal" block
-      >
+      <v-btn class="mb-8" color="blue" size="large" variant="tonal">
         Inicio
       </v-btn>
 

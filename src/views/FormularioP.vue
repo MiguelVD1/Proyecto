@@ -57,7 +57,7 @@
                     if (!/\d/.test(value || '')) return true;
                     return 'Last name cannot contain digits.';
                     },
-                ],       
+                ],        
             };            
         
         },
@@ -151,8 +151,8 @@
                                             v-model="password"
                                             :counter="10"
                                             :rules="passwordRules"
-                                            prepend-inner-icon="mdi-dialpad"
-                                            label="password"
+                                            label="Password"
+                                            prepend-inner-icon="mdi-lock-outline"
                                             hide-details
                                             required
                                         ></v-text-field>
@@ -206,19 +206,25 @@
                                             <v-radio label="Si" value="one" color="error"></v-radio>
                                             <v-radio label="No" value="two" color="error"></v-radio>
                                         </v-radio-group>
-                                    <v-btn
-                                        prepend-icon="mdi-check-circle"
+                                        <v-btn
+                                            class="ma-2"
                                         >
-                                        <template v-slot:prepend>
-                                            <v-icon color="success"></v-icon>
-                                        </template>
+                                            <v-icon
+                                            icon="mdi-arrow-left" color="red"
+                                            start
+                                            ></v-icon>
+                                            Regresar
+                                        </v-btn>
 
+                                        <v-btn
+                                            class="ma-2"
+                                        >
+                                            <v-icon
+                                            icon="mdi-check-circle"  color="success"
+                                            start
+                                            ></v-icon>
                                             Guardar
-
-                                        <template v-slot:append>
-                                            <v-icon color="warning"></v-icon>
-                                        </template>
-                                    </v-btn>
+                                        </v-btn>
                                 </v-card>     
                         </v-container>
                 </v-form>
